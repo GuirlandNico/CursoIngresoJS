@@ -1,21 +1,25 @@
 function mostrar()
 
-{	var alto;
-	var numero;
+{ 
+var alto;
+var numero;
 
-	for (numero=1; numero<100; numero++)
-		
+	alto=prompt ("Utilizar break en el numero: ");
+	alto=parseInt(alto);
+
+	for (numero=0;;)
 {
-	
+
 	alert ("el numero es: "+numero )
-	alto=prompt ("seguir: ");
+	 
 
-	if (alto=="s")
+	if (numero==alto)
 		{break;}
+numero++;
 
-
-	/*document.write("numeros ascendentes: "+numero+"<BR>");*/
+document.write("numeros ascendentes: "+numero+"<BR>");
+ 
 }
-
-	}
+}
+	
 //FIN DE LA FUNCIÓN

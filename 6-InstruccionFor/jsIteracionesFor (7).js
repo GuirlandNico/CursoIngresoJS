@@ -1,28 +1,31 @@
 function mostrar()
 {
-var resto;	
-var alto;
-var numero;
+/*var resultado2;*/	
+var resultado;	
+var elegido;
+var contador;
 var divisores=0;
 
-alto=prompt ("Utilizar break en el numero: ");
-alto=parseInt(alto);
+elegido=prompt ("Utilizar break en el numero: ");
+elegido=parseInt(elegido);
 
-for (numero=1;;)
+for (contador=1;;)
 {
 
- alert ("el numero es: "+numero )
+ alert ("el numero es: "+contador )
  
- resto=numero/alto; 	
+ resultado=contador%elegido; 	
+resultado=parseInt(resultado);
+/*resultado2=elegido/elegido;*/
 
-if (resto==5)
+if (resultado==0)
 	{
-	document.write("numero divisor: "+numero+"<BR>");
+	document.write("numero divisor: "+contador+"<BR>");
 	divisores++;}
 
-if (numero==alto)
+if (contador==elegido)
 		{break;}
-numero++;
+contador++;
 
 
 }

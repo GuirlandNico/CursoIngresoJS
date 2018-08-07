@@ -1,65 +1,71 @@
 function mostrar()
 {
-var  letra;
-var numero;
-var respuesta;
-var resto;
-var contador=0;
-var pares=0;
-var impares=0;
-var ceros=0;
-var sumaP;var promedio;
-var sumaN;
+	var letra; var numero; var contador=0;
+	var resto;
+	var pares=0; var impares=0; var ceros=0;
+	var acumulador=0; var promedio; var sumaN=0;
+	var maximoN=0; var letraMaximo;
+	var minimoN=0; var letraMinimo;
 
-while (contador<10)
-{
-	respuesta=prompt("quiere seguir: ");
-	if (respuesta=="si")
-		{
-		numero=prompt("ingrese el numero:");
-		numero=parseInt(numero);
+	while (contador<6)
+{	contador++;	
 
-		letra=prompt("ingrese la letra: ");
-		
-		if (numero>-100 && numero<100)
-		{ 
-				resto=numero%2;
-				resto=parseInt(resto);
-			if (resto==0)
-				{pares++;}
-			else 
-				{impares++;}
+	numero=prompt("ingrese numero: ");
+	numero=parseInt(numero);
 
-			if (numero==0)
-				{ceros++;}
+	while(numero<-100 || numero>100)
+	{
+		numero=prompt("ingrese numero valido: ");
+	}
 
+	letra=prompt("ingrese letra: ");
 
-			if (numero>0)
-			{
-			sumaP=sumaP+numero;
-			promedio=sumaP/contador;
+	resto=numero%2;
+	resto=parseInt(resto);
 
-			}
-			else 
-				{
-					sumaN=sumaN+numero;}
+	if (resto==0 && numero>0)
+	{
 
-
-
-
-
-		}
-
-		}
-
+		acumulador=acumulador+numero;
+		acumulador=parseInt(acumulador);
+		pares++;
+	}
 	else 
-	{break;}
+		{
+			sumaN=sumaN+numero;
+			sumaN=parseInt(sumaN);
+			impares++;}
+
+	if (numero==0)
+		{ ceros++;}
+
+	if (numero<minimoN)
+		{minimoN=numero;
+			letraMinimo=letra}
+	if (numero>maximoN)
+		{maximoN=numero;
+			letraMaximo=letra}
+
+
+
+
+
+
 }
+
+promedio=acumulador/pares;
+promedio=parseInt(promedio);
+
 
 document.write("la suma de los negativos es: "+sumaN+"<BR>");
 document.write("el promedio de los positivos es: "+promedio+"<BR>");
 document.write("la cantidad de pares es: "+pares+"<BR>");
+document.write("la cantidad de ceros es: "+ceros+"<BR>");
+document.write("la letra del numero minimo es "+letraMinimo+" y el numero es "+minimoN+"<BR>");
+document.write("la letra del numero minimo es "+letraMaximo+" y el numero es "+maximoN+"<BR>");
 document.write("la cantidad de impares es: "+impares);
 
 
 }
+
+

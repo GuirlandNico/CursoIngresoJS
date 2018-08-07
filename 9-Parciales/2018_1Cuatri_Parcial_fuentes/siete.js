@@ -1,64 +1,48 @@
 
-/* 
-jose m 25
-maria f 16
-jesus m 33
-fer f  81
-*/
+
 function mostrar()
-{	var contador=0;
-	var nombre;
-	var sexo; var cantMujeres=0; var cantHombres=0;
-	var edad;
-	var mayores=0;
-	var menores=0;
+{
+	var contador=0;
+	var nota; var promedio;
+	var sexo;
+	var acumulador=0;
+	var varones=0;
+	var notaBaja=10; var sexoBajo;
 
-	  while (contador<4)
-	{
+	while (contador<5)
+{	
 	contador++;
-	nombre=prompt("ingrese nombre: ");
 
-	sexo=prompt("ingrese sexo: ");
+	nota=prompt("ingrese nota del alumno: ");
+	nota=parseInt(nota);
+	while(nota<0 || nota>10)
+	{	nota=prompt("ingrese nota valida: ");	}
+
+	acumulador=acumulador+nota;
+
+
+	sexo=prompt("ingrese el sexo de la persona: ");
 	while (sexo!="m" && sexo!="f")
 	{
-		sexo=prompt("ingrese sexo valido:")
+		sexo=prompt("ingrese sexo valido:")	}
 
-	}
-	edad=prompt("ingrese edad: ")
-	edad=parseInt(edad);
-	while (isNaN(edad)||edad<0||edad>100)
-{
-	edad=prompt("ingrese edad: ")
-	edad=parseInt(edad);
-}
+	if (nota>=6 && sexo=="m")
+		{	varones++;	}
 
-if (sexo=="f")
-		{
-		cantMujeres++;
-		}
-else
-		{ cantHombres++;
-	 	}
-
-if (edad>18)
-		{
-		mayores++;
-		}
-else
-		{ menores++;
-	 	}
+	if (nota<notaBaja)
+		{	notaBaja=nota;
+			sexoBajo=sexo;	}
 
 
 }
 
+	
+	promedio=acumulador/5;
+	promedio=parseInt(promedio);
+	alert("el promedio de las notas es: "+promedio);
+	alert("varones con nota mayor o igual a 6 es: "+varones);
+	alert("la nota mas baja es "+notaBaja+" y el sexo de la persona es "+sexoBajo);
 
-document.write("cantMujeres:"+cantMujeres+ "<BR>");
-
-document.write("cantHombres:"+cantHombres+ "<BR>");
-
-document.write("mayores:"+mayores+ "<BR>")
-
-document.write("menores:"+menores+ "<BR>")
 
 
 }
